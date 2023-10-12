@@ -23,18 +23,22 @@ servo2.start(0)
 time.sleep(1)
 
 # Calcul des angles
-angle = 0
-angle = 2+(angle/18)
+angle1 = 0
+angle1 = 2+(angle1/18)
+
+angle2 = 180
+angle2 = 2+(angle2/18)
                             
 # Loop for duty values from 2 to 12 (0 to 180 degrees)
-while angle <= 12:
-    servo1.ChangeDutyCycle(angle)
-    servo2.ChangeDutyCycle(angle)
+while angle1 <= 12:
+    servo1.ChangeDutyCycle(angle1)
+    servo2.ChangeDutyCycle(angle2)
     time.sleep(0.3)
     servo1.ChangeDutyCycle(0)
     servo2.ChangeDutyCycle(0)
     time.sleep(0.7)
-    angle = angle + 1
+    angle1 = angle1 + 1
+    angle2 = angle2 - 1
 
 # Cleaning
 servo1.stop()
